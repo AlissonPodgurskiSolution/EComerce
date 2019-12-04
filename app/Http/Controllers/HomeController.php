@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,20 +19,10 @@ class FrontController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('front.home');
-    }
-
-    public function home()
-    {
-        return view('front.home');
-    }
-
-    public function contact()
-    {
-        return view('front.contact');
+        return view('home');
     }
 }

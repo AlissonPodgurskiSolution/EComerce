@@ -15,9 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', 'HomeController@index');
-Route::get('contact', 'HomeController@contact');
+Route::get('/home', 'FrontController@index')->name('home');
+Route::get('/contact', 'FrontController@contact')->name('contact');
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function () {
+
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('admin.index');
+});
+
