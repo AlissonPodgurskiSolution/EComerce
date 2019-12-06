@@ -16,9 +16,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories=Category::all();
-
-
-        return view('admin.category.index',compact(['categories','products']));
+        return view('admin.category.index',compact(['categories']));
     }
 
     /**
@@ -39,7 +37,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create(['name'=>$request->name,'slug'=>str_slug($request->name)]);
+        Category::create(['name'=>$request->name]);
         return back();
     }
 
