@@ -30,6 +30,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function (
     Route::post('product/image-upload/{productId}','ProductsController@uploadImages');
     Route::resource('product','ProductsController');
     Route::resource('category','CategoriesController');
+    Route::get('/plan', 'PlanController@index')->name('plans.index');
+    Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
+    Route::post('subscription', 'SubscriptionController@create')->name('subscription.create');
 
 });
 

@@ -18,6 +18,16 @@
             </li>
             <li class="submenu">
                 <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Stripe
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="{{route('plans.index')}}">Plans</a></li>
+                </ul>
+            </li>
+            <li class="submenu">
+                <a href="#">
                     <i class="glyphicon glyphicon-list"></i> Category
                     <span class="caret pull-right"></span>
                 </a>

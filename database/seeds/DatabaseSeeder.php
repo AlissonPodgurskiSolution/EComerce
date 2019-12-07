@@ -18,12 +18,14 @@ class DatabaseSeeder extends Seeder
         DB::table('categories')->delete();
         DB::table('products')->delete();
 
+        $this->call(PlansSeeder::class);
+
         factory(User::class)->create([
             'email' => 'team@devsquad.com',
         ]);
 
-        factory(Category::class, 2)->create()->each(function($category) {
-            factory(Product::class,10)->create(['category_id' => $category->id]);
+        factory(Category::class, 2)->create()->each(function ($category) {
+            factory(Product::class, 10)->create(['category_id' => $category->id]);
         });
     }
 }
